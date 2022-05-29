@@ -1,0 +1,30 @@
+.navBar {
+    box-sizing: border-box;
+    width: 370px;
+    display: inline-block;
+}
+.navBar_list {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-size: 12px;
+    list-style-type: none;
+}
+
+.logoImage {
+    position: relative;
+    bottom: -5px;
+    left: 5px;
+    
+}
+
+.navBar_list a {
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+.activeLink,
+.activity  a:hover {
+    border-bottom: 2px solid #ffff;
+}
+
