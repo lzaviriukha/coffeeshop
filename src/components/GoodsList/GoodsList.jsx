@@ -3,9 +3,11 @@ import GoodsItem from '../GoodsItem/GoodsItem';
 import s from './GoodsList.module.css'
 
 const GoodsList = (props) => {
-  const {data} = props;
+  const {data, showCountry} = props;
 
   const goodsList = data.map((item) => {
+    console.log(item)
+    item = {...item, showCountry}
     return (
       <GoodsItem key={item.id} {...item}/>
     )

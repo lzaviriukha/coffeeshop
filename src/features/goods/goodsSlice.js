@@ -50,5 +50,8 @@ export const selectReccommendGoods = (state) => state.goods.goods.filter(good =>
 export const selectGoodsById = (state, gooddsId) => {
   state.goods.goods.find((good) => good.id === gooddsId);
 };
+export const selectGoodsByFilter = (state, filter) => 
+  state.goods.goods.filter(good => good.country === filter)
+
 
 export default goodsSlice.reducer;

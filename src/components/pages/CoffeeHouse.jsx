@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import {
-  fetchGoods,
-  selectReccommendGoods,
-} from "../../features/goods/goodsSlice";
+import { selectReccommendGoods } from "../../features/goods/goodsSlice";
 
 import Header from "../Header/Header";
 import NavBar from "../NavBar/NavBar";
@@ -16,23 +13,16 @@ import GoodsList from "../GoodsList/GoodsList";
 import s from "./CoffeeHouse.module.css";
 
 const CoffeeHouse = () => {
-  const dispatch = useDispatch();
   const goods = useSelector(selectReccommendGoods);
   const goodsStatus = useSelector((state) => state.goods.status);
   const error = useSelector((state) => state.goods.error);
-
-  useEffect(() => {
-    if (goodsStatus === "idle") {
-      dispatch(fetchGoods());
-    }
-  }, []);
 
   let content;
 
   if (goodsStatus === "loading") {
     content = "Loading......";
   } else if (goodsStatus === "succeeded") {
-    content = <GoodsList data={goods} />;
+    content = <GoodsList data={goods} showCountry={false} />;
 
     // posts
     //   .slice()
@@ -69,7 +59,9 @@ const headerContent = (
       <br />
       Want to try our beans?
     </p>
-    <Link to="ourcoffee" className={s.more_link}>More</Link>
+    <Link to="ourcoffee" className={s.more_link}>
+      More
+    </Link>
   </>
 );
 
@@ -109,7 +101,6 @@ const aboutUsContent = (
       <br />
       repair day ladies now.
     </p>
-    
   </>
 );
 

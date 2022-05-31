@@ -1,0 +1,16 @@
+.button_group_container {
+    display: flex;
+    width: 350px;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.button {
+    width: 235px;
+    display: flex;
+    justify-content: space-between;
+}
+.button_group_container p {
+    color: #000
+}

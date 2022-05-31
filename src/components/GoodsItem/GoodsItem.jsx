@@ -12,14 +12,14 @@ const GoodsItem = (props) => {
     title = "Solimo Coffee Beans 2 kg",
     country = null,
     price = "1",
-    reccommend
+    showCountry = true 
   } = props;
 
   const item = (
     <Link to={`/goods/${id}`}>
     <img src={image} alt="coffe" className={s.goodsItem_image}/>
     <p className={s.goodsItem_title}>{title}</p>
-    {!reccommend && <p className={s.goodsItem_country}>{country}</p>}
+    {(showCountry == true) && <p className={s.goodsItem_country}>{country}</p>}
     <p className={s.goodsItem_price}>{`${price}$`}</p>
     </Link>
   )
