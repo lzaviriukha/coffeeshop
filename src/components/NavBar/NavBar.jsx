@@ -1,24 +1,26 @@
 // The NavBar component gets the linksActivity property.
-//{linksActivity = true} enable bottom border when the component is active
+//{header = true} enable bottom border when the component is active
 // and on hover by adding the .activity class from NavBar.module.css
+
+// HeaderFooterIcon component track {header = true}.
 
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ReactComponent as LogoImg } from "./Group.svg";
+import HeaderFooterIcon from "../Icons/NavBarIcon";
 import s from './NavBar.module.css' // style module
 
 const NavBar = (props) => {
-  const {linksActivity = true} = props;
+  const {header = true} = props;
 
-  const activeStyle = ({isActive}) => (isActive && linksActivity) ? s.activeLink : undefined;
-  const linksClasses = `${linksActivity ? s.activity : null}`; 
+  const activeStyle = ({isActive}) => (isActive && header) ? s.activeLink : undefined;
+  const linksClasses = `${header ? s.activity : s.default}`; 
 
   return (
       <nav className={s.navBar}>
         <ul className={s.navBar_list}>
           <li className={linksClasses}>
-            <NavLink to="house" className={activeStyle}>
-              <LogoImg className={s.logoImage}/>
+            <NavLink to="" className={activeStyle}>
+              <HeaderFooterIcon header={header ? true : false}/>
               Coffee house
             </NavLink>
           </li>
