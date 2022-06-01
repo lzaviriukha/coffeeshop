@@ -11,6 +11,7 @@ import BeansLogo from "../Icons/BeansLogo";
 import GoodsList from "../GoodsList/GoodsList";
 
 import s from "./CoffeeHouse.module.css";
+import Footer from "../Footer/Footer";
 
 const CoffeeHouse = () => {
   const goods = useSelector(selectReccommendGoods);
@@ -43,7 +44,7 @@ const CoffeeHouse = () => {
         <h3>Our best</h3>
         {content}
       </div>
-      {footer}
+      <Footer />
     </div>
   );
 };
@@ -104,15 +105,5 @@ const aboutUsContent = (
   </>
 );
 
-const footer = (
-  <div className={s.footer}>
-    <div className={s.footer_item}>
-      <NavBar header={false} />
-    </div>
-    <div className={s.footer_item}>
-      <BeansLogo fill="black" stroke="black" />
-    </div>
-  </div>
-);
 
 export default CoffeeHouse;

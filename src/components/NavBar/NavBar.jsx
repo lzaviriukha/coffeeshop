@@ -19,16 +19,16 @@ const NavBar = (props) => {
       <nav className={s.navBar}>
         <ul className={s.navBar_list}>
           <li className={linksClasses}>
-            <NavLink to="" className={activeStyle}>
+            <NavLink to="/" className={activeStyle}>
               <HeaderFooterIcon header={header ? true : false}/>
               Coffee house
             </NavLink>
           </li>
           <li className={linksClasses}>
-            <NavLink to="ourcoffee" className={activeStyle}>Our coffee</NavLink>
+            <NavLink to="/ourcoffee" className={activeStyle}>Our coffee</NavLink>
           </li>
           <li className={linksClasses}>
-            <NavLink to="pleasure"className={activeStyle}>For your pleasure</NavLink>
+            <NavLink to="/pleasure"className={activeStyle}>For your pleasure</NavLink>
           </li>
         </ul>
       </nav>

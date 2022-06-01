@@ -3,15 +3,27 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 657.73px;
     width: 100%;
+}
+
+.mainPage_header__height {
+    height: 657.73px;
 }
 
 .headerContainer__mainPageBackground {
     background-image: url(./Main_bg.jpg);
     background-size: contain;
     background-repeat: no-repeat;
-    
+}
+
+.ourCoffee_header__height {
+    height: 260px;
+}
+
+.headerContainer__ourCoffeePageBackground {
+    background-image: url(./OurCoffe.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .navbarContainer {

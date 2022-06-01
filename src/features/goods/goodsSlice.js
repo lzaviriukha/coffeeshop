@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSelector } from "@reduxjs/toolkit";
 
 import coffeeApi from "./commonApi";
 
@@ -47,11 +48,23 @@ const goodsSlice = createSlice({
 
 export const selectAllGoods = (state) => state.goods.goods;
 export const selectReccommendGoods = (state) => state.goods.goods.filter(good => good.reccommend === 'true')
+
 export const selectGoodsById = (state, gooddsId) => {
   state.goods.goods.find((good) => good.id === gooddsId);
 };
+
 export const selectGoodsByFilter = (state, filter) => 
   state.goods.goods.filter(good => good.country === filter)
+
+export const selectGoodsByInput = (state, term) => {
+  if (term.length === 0) {
+    return false
+  }
+
+  let regExp = new RegExp(`${term}`, 'gi');
+
+  return state.goods.goods.filter(good => good.title.search(regExp) > -1)
+} 
 
 
 export default goodsSlice.reducer;
